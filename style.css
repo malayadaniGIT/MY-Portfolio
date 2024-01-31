@@ -221,7 +221,7 @@ section .title::after{
     content: "who i am";
 }
 .about .title1::after{
-    content: "Connect Us";
+    content: "Connect with me";
 }
 
 .about .about-content .left{
@@ -262,6 +262,22 @@ section .title::after{
 .about .about-content .right a:hover{
     color: crimson;
     background: none;
+}
+ /* Resume section */
+.resume {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+}
+
+.resume-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resume-pdf {
+    border: 2px solid #363b3e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* services section styling */
@@ -559,6 +575,21 @@ footer span a{
 }
 footer span a:hover{
     text-decoration: underline;
+}
+
+.social-links a:hover {
+    color: initial !important;
+}
+
+.social-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a i {
+    font-size: 30px;
 }
 
 
