@@ -71,3 +71,9 @@ $(document).ready(function(){
         }
     });
 });
+
+function directEmail() {
+    window.location.href = 'mailto:malayadani@gmail.com';
+}
+
+

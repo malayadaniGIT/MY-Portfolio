@@ -33,7 +33,6 @@
         </div>
     </nav>
 
-    <!-- home section start -->
     <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
@@ -45,7 +44,6 @@
         </div>
     </section>
 
-    <!-- about section start -->
     <section class="about" id="about">
         <div class="max-width">
             <h2 class="title">About me</h2>
@@ -81,11 +79,9 @@
                 &nbsp; &nbsp;
                 <a href="https://www.twitter.com/malaya.dani.581" target="_blank">
                     <i class="fab fa-twitter" style="font-size:32px"></i>
-
                 </a>
             </div>
         </center>
-        <!-- Resume section start -->
     </section>
     
     <section class="resume" id="resume">
@@ -97,8 +93,6 @@
         </div>
     </section>
 
-
-    <!-- services section start -->
     <section class="services" id="services">
         <div class="max-width">
             <h2 class="title">My Projects</h2>
@@ -152,7 +146,6 @@
         </div>
     </section>
 
-    <!-- skills section start -->
     <section class="skills" id="skills">
         <div class="max-width">
             <h2 class="title">My skills</h2>
@@ -162,6 +155,13 @@
                     <p>Proficiency in HTML/CSS: Showcase my ability to create visually appealing and well-structured web pages using HTML and CSS. Include examples of responsive design and demonstrate your understanding of CSS. JavaScript Expertise: Showcase my JavaScript skills by highlighting interactive features i've implemented, such as animations, form validation, or dynamic content updates. Provide examples of working with JavaScript libraries or frameworks like React.</p>
                 </div>
                 <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>React</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line react"></div>
+                    </div>
                     <div class="bars">
                         <div class="info">
                             <span>HTML</span>
@@ -185,14 +185,7 @@
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>React</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="line react"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>MySQL</span>
+                            <span>Figma</span>
                             <span>70%</span>
                         </div>
                         <div class="line mysql"></div>
@@ -200,7 +193,7 @@
                     <div class="bars">
                         <div class="info">
                             <span>Git-Hub</span>
-                            <span>65%</span>
+                            <span>60%</span>
                         </div>
                         <div class="line git"></div>
                     </div>
@@ -209,7 +202,6 @@
         </div>
     </section>
 
-    <!-- contact section start -->
     <section class="contact" id="contact">
         <div class="max-width">
             <h2 class="title">Contact me</h2>
@@ -261,8 +253,9 @@
                         <div class="field textarea">
                             <textarea cols="30" rows="10" placeholder="Message.." name="message" id="message" required></textarea>
                         </div>
-                        <div class="button-area">
+                        <div class="button-area email-buttons">
                             <button type="button" onclick="sendEmail()">Send message</button>
+                            <button id="btnd" type="button" onclick="directEmail()">Direct Email</button>
                         </div>
                     </form>
                 </div>
@@ -270,40 +263,43 @@
         </div>
     </section>
 
-   <footer><a>Malaya</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
+    <footer><a>Malaya</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        function sendEmail() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+
+            emailjs.init("Pcw-cdcuv5TRC8aB9");
+
+            emailjs.send("service_umafvfe","template_cryr28r", {
+                to_name: "Malaya Dani",
+                from_name: name,
+                from_email: email,
+                phone:phone,
+                subject: subject,
+                message: message
+            }).then(
+                function (response) {
+                    console.log("Email sent successfully", response);
+                    alert("Message sent successfully!");
+                },
+                function (error) {
+                    console.log("Email sending failed", error);
+                    alert("Message sending failed. Please try again.");
+                }
+            );
+        }
+
+        function directEmail() {
+            window.location.href = "mailto:malayadani@gmail.com";
+        }
+    </script>
 </body>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    function sendEmail() {
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let subject = document.getElementById("subject").value;
-        let message = document.getElementById("message").value;
-
-        emailjs.init("Pcw-cdcuv5TRC8aB9");
-
-        emailjs.send("service_umafvfe","template_cryr28r", {
-            to_name: "Malaya Dani",
-            from_name: name,
-            from_email: email,
-            phone:phone,
-            subject: subject,
-            message: message
-        }).then(
-            function (response) {
-                console.log("Email sent successfully", response);
-                alert("Message sent successfully!");
-            },
-            function (error) {
-                console.log("Email sending failed", error);
-                alert("Message sending failed. Please try again.");
-            }
-        );
-    }
-</script>
 </html>

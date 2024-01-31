@@ -168,7 +168,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background: url("https://images.unsplash.com/photo-1633933714442-a68def2d5849?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -268,6 +268,10 @@ section .title::after{
     background-color: #f5f5f5;
     padding: 50px 0;
 }
+.resume .title::after{
+    content: "Updated";
+    background-color:#f5f5f5;
+}
 
 .resume-content {
     display: flex;
@@ -293,6 +297,7 @@ section .title::after{
 .teams .title::after{
     background: #111;
     content: "what did i do";
+    
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
@@ -541,6 +546,7 @@ section .title::after{
 }
 .contact .right form .button-area{
   display: flex;
+  gap: 20px;
   align-items: center;
 }
 .right form .button-area button{
@@ -561,6 +567,10 @@ section .title::after{
 .right form .button-area button:hover{
   color: crimson;
   background: none;
+}
+#btnd{
+    background-color: rgb(31, 92, 130);
+    border: 2px solid rgb(31, 92, 130);
 }
 /* footer section styling */
 footer{
